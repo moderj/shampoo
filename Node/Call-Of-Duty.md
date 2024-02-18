@@ -429,7 +429,7 @@ The auto scheduling mechanism should schedule all unscheduled duties.
 
 1. **Multiple parameters**
 
-   Extend the `/soldiers` and `/duties` routes functionality to multiple parameters search query.
+   Extend the `/soldiers` and `/duties` routes functionality to multiple parameters search query, including array parameters.
 
    For example: A request to `/duties?name=hagnash&soldiers=mishel,shir` should return all `"hagnash"` duties that contains both `"mishel"` and `"shir"`. (Note that a `"hagnash"` duty that was scheduled with `"mishel"`, `"shir"` and `"david"` should also be returned).
 
