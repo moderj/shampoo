@@ -223,6 +223,8 @@ WIP work in progress
 
 That way it is easier to perform rebases.
 
+If you already know that you are going to fixup the commit, you can use the `--fixup` option, and then use the `rebase` command with the `--autosquash`.
+
 ### Questions - Commit Creation
 
 #### **Commit Hash**
@@ -785,7 +787,7 @@ link at every chapter._
       ```
 
    2. Commit the fix to page-2 with temp name like `fix page-2` (Or
-      `FIXUP page 2`).
+      `FIXUP page 2`). You can use the `--fixup` option.
    3. Add the code to page-3:
 
       ```txt
@@ -798,9 +800,9 @@ link at every chapter._
       ```
 
    4. Commit the code to page-3 with temp name like `fix page-3` (Or
-      `FIXUP page 3`).
+      `FIXUP page 3`). you can use the `--fixup` option.
    5. `rebase -i` with fixup (`f`) option and inject the fixes commit in the
-      right places.
+      right places. You can use the `--autosquash` option.
    6. Nice! push your branch to the remote.
    7. Approve the PR **after** you put `chapter-9` on top of `origin\main`
       branch.
