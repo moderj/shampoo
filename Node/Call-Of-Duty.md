@@ -415,6 +415,10 @@ The auto scheduling mechanism should schedule all unscheduled duties.
 
    You can use [fastify-rate-limit](https://github.com/fastify/fastify-rate-limit).
 
+1. Protect your app from process overload. 
+
+   You can use [fastify-under-pressure](https://github.com/fastify/under-pressure).
+
 1. Add a seed script to your app.
 
    The script should insert some soldiers and duties to the database.
