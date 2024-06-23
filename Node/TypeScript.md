@@ -479,7 +479,16 @@ For more information you can read in the [Fastify typebox doc](https://www.fasti
    // @ts-expect-error
    const { path } = routes.NotExist;
    ```
+1. Create `FirstParam` utility type which return the type of the first parameter of function:
 
+    
+    ```ts
+    const fn = (a: number, b: string) => a;
+    type x = FirstParam<typeof fn> // number
+    ```
+
+    Do not use explicit `any`!
+ 
 1. - Create a type "function" which generate tuple types. For Example:
 
      ```ts
