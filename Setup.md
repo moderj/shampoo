@@ -72,7 +72,7 @@ your Linux distribution.
 sudo apt update && sudo apt upgrade
 ```
 
-### 1.5. Install zsh (Recommended)
+### 1.5. Install zsh
 
 Zsh is a shell designed for interactive use, although it is also a powerful
 scripting language.
@@ -89,61 +89,15 @@ chsh -s $(which zsh)
 
 You can check your shell by running `echo $SHELL`.
 
-### 1.6. Install oh-my-zsh (Recommended)
+### 1.6. Install zap (Recommended)
 
-[Oh My Zsh](https://ohmyz.sh/) is a open source framework for managing your Zsh
-configuration.
-
-Before all we need to have git installed:
+[Zap](https://www.zapzsh.com/) is a minimal zsh plugin manager.
 
 ```bash
-sudo apt install git
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
 ```
-
-Then, use `curl` to install oh-my-zsh:
-
-```bash
-sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-#### Antigen
-
-[Antigen](https://github.com/zsh-users/antigen) is plugin manager for zsh.
-
-Install it:
-
-```bash
-curl -L git.io/antigen > $HOME/antigen.zsh
-```
-
-Configure zsh with antigen:
-
-1. Open `.zshrc` in your editor (`nano ~/.zshrc` or `code ~/.zshrc`)
-2. Delete all the lines in `.zshrc`
-3. Replace it with the following (my recommended configuration):
-
-```bash
-source $HOME/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle git
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-
-export NVM_LAZY_LOAD=true
-antigen bundle lukechilds/zsh-nvm
-
-antigen theme robbyrussell
-antigen apply
-
-```
-
 ---
-
-You can Change the Theme of oh-my-zsh! look it up if you like
+You can Change the Theme of zsh! look it up if you like
 
 ## 2. Install VS code
 
