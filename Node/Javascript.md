@@ -43,7 +43,17 @@ So in order to run JavaScript on your computer, you need to install NodeJS.
 
 Even if you only need a single version of Node.js right now, It is still recommend using nvm because it allows you to switch between different versions of Node (depending on the requirements of your project) with minimal hassle.
 
-to install nvm:
+If you follow the [setup](../Setup) instructions, You can use this command to autoload NVM and for shell completions.
+
+```bash
+sed -i '7i\
+\n# NVM\
+export NVM_LAZY_LOAD=true\
+export NVM_COMPLETION=true\
+plug "lukechilds/zsh-nvm"' ~/.zshrc
+```
+
+to manually install nvm:
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -56,9 +66,6 @@ nvm --version
 ```
 
 For more information you can use the repository [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
-
-Optional: [zsh plugin with lazy load](https://github.com/lukechilds/zsh-nvm) Or [Lazy load nvm for faster shell start](http://broken-by.me/lazy-load-nvm/).
-If you follow the [setup](../Setup) instructions, you already have this plugin.
 
 ## JavaScript
 
@@ -332,6 +339,7 @@ Additional Topics:
 ## Tools
 
 - [pnpm](https://pnpm.io/)
+- [fnm](https://github.com/Schniz/fnm)
 - [snyk advisor](https://snyk.io/advisor/)
 - [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit)
 - [cSpell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
