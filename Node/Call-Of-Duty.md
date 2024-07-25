@@ -52,12 +52,11 @@ Here is my recommended technologies:
 - Logger: [fastify built-in pino logger](https://www.fastify.io/docs/latest/Reference/Logging/) or [pino](https://www.npmjs.com/package/pino) or [winston](https://www.npmjs.com/package/winston).
 - Schema validator: [fastify built-in ajv validator](https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/) or [Ajv](https://ajv.js.org/) or [Joi](https://joi.dev/). If you using Typescript have a look at [Runtime checks with TypeScript](Node/TypeScript#runtime-checks-with-typescript) section.
 - Package Manager: [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.js.org/)
-- [Linter](<https://en.wikipedia.org/wiki/Lint_(software)>): [eslint](https://eslint.org/) using [airbnb](https://github.com/airbnb/javascript) style guide or
-  [XO](https://github.com/xojs/xo) style guide,
-  or [Biome](https://biomejs.dev/) linter and formatter.
+- [Linter](<https://en.wikipedia.org/wiki/Lint_(software)>): [Biome](https://biomejs.dev/) linter and formatter or [eslint](https://eslint.org/) using [airbnb](https://github.com/airbnb/javascript) style guide or [XO](https://github.com/xojs/xo) style guide.
 - Optional:
   - [prettier](https://prettier.io/)
   - [Cspell](https://cspell.org/)
+  - [gitlab-ci](https://docs.gitlab.com/ee/ci/)
 
 ## Models
 
@@ -415,7 +414,7 @@ The auto scheduling mechanism should schedule all unscheduled duties.
 
    You can use [fastify-rate-limit](https://github.com/fastify/fastify-rate-limit).
 
-1. Protect your app from process overload. 
+1. Protect your app from process overload.
 
    You can use [fastify-under-pressure](https://github.com/fastify/under-pressure).
 
