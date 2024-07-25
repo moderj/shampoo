@@ -89,6 +89,14 @@ git config --global user.email "youremail@domain.com"
 > [Attached](.gitconfig) to this project is my .gitconfig file. You can use it to build your
 > awesome `.gitconfig`! Don't forget to share it with me. :joy:
 
+You can use it using the following command:
+
+```bash
+curl -o ~/.gitconfig https://gitlab.com/davidbk6/shampoo/-/wikis/Workflow/.gitconfig
+```
+
+Don't forget to replace the `email` and `name` in the `.gitconfig` file.
+
 ### Configure Connection with the remote (Recommended)
 
 Git uses several protocols for client-server communication. SSH and HTTPS are

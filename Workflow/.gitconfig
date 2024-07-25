@@ -1,0 +1,85 @@
+[user]
+name = Did you not change your name?
+email = this_is_not_an_email.com
+[init]
+defaultBranch = main
+[core]
+editor = code --wait
+autocrlf = false
+[pull]
+rebase = true
+[push]
+autoSetupRemote = true
+[merge]
+conflictStyle = zdiff3
+[rebase]
+autosquash = true
+updateRefs = true
+[commit]
+verbose = true
+[rerere]
+enabled = true
+[help]
+autocorrect = prompt
+[diff]
+algorithm = histogram
+colorMoved = zebra
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+	insteadOf = "gh:"
+[transfer]
+fsckobjects = true
+[fetch]
+fsckobjects = true
+[receive]
+fsckobjects = true
+[branch]
+sort = -committerdate
+[log]
+date = relative
+[format]
+pretty = format:%C(auto,yellow)%h %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+[alias]
+s = status -s -M
+st = status -M
+pop = stash pop
+c = commit
+cm = commit -m
+cf = commit --fixup
+ca = commit --amend
+can = commit --amend --no-edit
+amend = commit --amend
+plus = commit --amend --no-edit
+cp = cherry-pick
+a = add
+aa = add .
+p = push
+pf = push --force-with-lease
+pl = pull
+b = branch
+co = checkout
+cob = checkout -b
+l = log --oneline --decorate
+la = l --all --graph
+ls = l --stat
+lg = log -g
+rb = rebase
+rba = rebase --abort
+rbc = rebase --continue
+rbi = rebase --interactive
+r = reset
+rh = reset --hard
+rhh = reset --hard HEAD
+rk = reset --keep
+rhu = reset --hard @{u}
+cl = clone
+cld = clone --depth=1
+f = fetch
+fo = fetch origin
+alias = !git config --get-regexp 'alias.*' | column -t
+search = !git rev-list --all | xargs git grep -F
+re = remote
+ra = remote add
+rr = remote remove
+rv = remote -v
+rao = remote add origin
