@@ -251,6 +251,9 @@ Some questions about the more advanced topics:
    console.log(addOnce(-2, 8)); // Error: Function already called
    ```
 
+   - You can try to implement it first without support for arguments and then add support for arguments.
+   - Hint: you can use a flag to check if the function was already called and then return a new function that throws an error if the flag is true (JS will remember the flag value because of closures).
+
 ### JavaScript - Worth knowing (Advanced)
 
 Some advanced concepts that worth mentioning, don't learn them now but know that they exist:
