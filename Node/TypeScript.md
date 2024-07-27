@@ -94,12 +94,13 @@ Here is a recommended `tsconfig.json` file:
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }
 ```
+
 You can run this script in your terminal to create the file:
 
 ```bash
@@ -136,7 +137,7 @@ Test it! create `.ts` file and run the compile `.js`.
 
 ### TypeScript Execute - tsx (Optional)
 
-tsx (TypeScript eXecute - do not confuse with React's [TSX](https://www.typescriptlang.org/docs/handbook/jsx.html) files which stand for TypeScript XML) is a TypeScript runtime that allows you to execute TypeScript files directly. 
+tsx (TypeScript eXecute - do not confuse with React's [TSX](https://www.typescriptlang.org/docs/handbook/jsx.html) files which stand for TypeScript XML) is a TypeScript runtime that allows you to execute TypeScript files directly.
 
 This tool is useful for running TypeScript files without the need to compile them to JavaScript first.
 
@@ -479,16 +480,27 @@ For more information you can read in the [Fastify typebox doc](https://www.fasti
    // @ts-expect-error
    const { path } = routes.NotExist;
    ```
-1. Create `FirstParam` utility type which return the type of the first parameter of function:
 
-    
-    ```ts
-    const fn = (a: number, b: string) => a;
-    type x = FirstParam<typeof fn> // number
-    ```
+1. - Fix this `once` (From the [Javascript](Node/Javascript) bonus question) implementation so it will work with TypeScript:
 
-    Do not use explicit `any`!
- 
+     ```ts
+       function once(fn) {
+         let called = false;
+         return (...args) => {
+           if (called) throw new Error("Function already called");
+           called = true;
+           return fn(...args);
+         };
+       }:
+
+     const add = (a: number, b: number) => a + b;
+
+     const addOnce = once(add);
+     const res = addOnce(3, 4); // type: number
+     ```
+
+   - Did you use `any` type? now try to fix the code without it.
+
 1. - Create a type "function" which generate tuple types. For Example:
 
      ```ts
@@ -522,29 +534,6 @@ For more information you can read in the [Fastify typebox doc](https://www.fasti
      const num = Math.random() > 0.5 ? 2 : 3;
      const res3 = group(arr, num); // const res3: ([number, number] | [number, number, number])[]
      ```
-
-1. Fix the types of this `curry` helper function:
-
-   ```ts
-   type Fn = (...args: any[]) => any;
-
-   const curry = (fn: Fn) => {
-     const curried = (...args: unknown[]) =>
-       args.length >= fn.length
-         ? fn(...args)
-         : (...args2: unknown[]) => curried(...args.concat(args2));
-
-     return curried;
-   };
-
-   const sum = curry((a: number, b: number) => a + b);
-
-   const add2 = sum(2); // any. Fix it!
-
-   const test = curry((a: string, b: number, c: boolean) => true); // (...args: unknown[]) => any. Fix it!
-
-   const trueFn = curry(() => true); // Fix it!
-   ```
 
 ## Project
 
