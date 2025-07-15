@@ -2,6 +2,7 @@
 title: Frontend React
 ---
 
+
 ## React and Material UI
  React Github repos - https://github.com/enaqx/awesomereact?tab=readme-ov-file
 
@@ -16,12 +17,11 @@ Go over the following react concepts:
 5. Fragments
 6. Refs and Frorward refs
 7. Error Boundaries
-8. JSX
-9. High Order Components
-10. JSX
-11. Memorization – useMemo and useCallback
-12. Custom Hooks
-13. React query
+8. High Order Components
+9. JSX
+10. Memorization – useMemo and useCallback
+11. Custom Hooks
+12. React query
 
 Important video, watch till 3:30: https://www.youtube.com/watch?v=CFRhGnuXG-4
 
