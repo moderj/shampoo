@@ -44,3 +44,5 @@ After completing this learning path, you'll be able to:
 ## Next steps
 
 Start your frontend journey with the foundation - [HTML](Frontend/HTML).
+
+Once you have mastered the basics of HTML, CSS, and JavaScript, you should continue to the **[React Development](React/React)** path to learn how to build modern web applications.

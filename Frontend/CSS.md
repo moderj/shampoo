@@ -40,6 +40,7 @@ Here are some example links:
 - [Flexbox Froggy](https://flexboxfroggy.com/) - Interactive Flexbox game
 - [CSS Grid Garden](https://cssgridgarden.com/) - Interactive Grid game
 - [CSS-Tricks](https://css-tricks.com/) - Comprehensive CSS reference
+- [CSS-Battle](https://cssbattle.dev/) - Interactive CSS challenges (recommended)
 
 ## CSS Basics
 
