@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823591487728">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Frontend JavaScript</title>
+    <meta name="title" content="Frontend JavaScript">
+    <meta name="description" content="Estimation time: 4-5 Days">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.example.com/frontend/javascript-vanilla/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.example.com/frontend/javascript-vanilla/">
+    <meta property="og:title" content="Frontend JavaScript">
+    <meta property="og:description" content="Estimation time: 4-5 Days">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.example.com/frontend/javascript-vanilla/">
+    <meta property="twitter:title" content="Frontend JavaScript">
+    <meta property="twitter:description" content="Estimation time: 4-5 Days">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../resources/css/retype.css?v=3.11.0.823591487728" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.823591487728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.823591487728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.823591487728" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="frontend-javascript" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#frontend-javascript">#</doc-anchor-trigger>
+        <span>Frontend JavaScript</span>
+    </h1>
+</doc-anchor-target>
+<blockquote>
+<p><em>Estimation time: 4-5 Days</em></p>
+</blockquote>
+<hr>
+<p>Frontend JavaScript brings web pages to life. Unlike Node.js JavaScript that runs on servers, frontend JavaScript runs in the browser and can interact with HTML and CSS to create dynamic, interactive user experiences.</p>
+<p>The reason you are learning frontend JavaScript is because modern web applications require interactivity. From handling user input to making API calls, from animations to real-time updates - JavaScript makes it all possible in the browser.</p>
+<p><strong>Prerequisites</strong>: Complete the <a href="Node/Javascript">Node/JavaScript</a> module first. This module focuses specifically on browser APIs and DOM manipulation.</p>
+<hr>
+<p><strong><em>Learning objectives:</em></strong></p>
+<p>At the end of this module, you&#x27;ll be able to:</p>
+<ul>
+<li>Manipulate the DOM to dynamically change page content</li>
+<li>Handle user events (clicks, input, keyboard, etc.)</li>
+<li>Make HTTP requests to fetch data from APIs</li>
+<li>Store data in the browser (localStorage, sessionStorage)</li>
+<li>Debug JavaScript using browser DevTools</li>
+<li>Understand the event loop and asynchronous operations in the browser</li>
+</ul>
+<hr>
+<p><em>Send me back <a href="home">home</a></em></p>
+<p><a href="_toc_"> TOC </a></p>
+<hr>
+<p><strong>Learning note</strong>: This module assumes you know JavaScript basics (variables, functions, loops, etc.). We focus on browser-specific APIs and patterns. Practice by building small interactive features!</p>
+<p>Here are some example links:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API">MDN Web APIs</a> - Browser API reference</li>
+<li><a href="https://javascript.info/document">JavaScript.info - Browser Document</a> - DOM manipulation</li>
+<li><a href="https://javascript.info/events">JavaScript.info - Events</a> - Event handling</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Fetch API Guide</a></li>
+</ul>
+<doc-anchor-target id="the-dom-document-object-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-dom-document-object-model">#</doc-anchor-trigger>
+        <span>The DOM (Document Object Model)</span>
+    </h2>
+</doc-anchor-target>
+<p>The DOM is a tree representation of your HTML document that JavaScript can interact with.</p>
+<doc-anchor-target id="selecting-elements">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selecting-elements">#</doc-anchor-trigger>
+        <span>Selecting Elements</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// By ID
+const header = document.getElementById('header');
+
+// By class name (returns HTMLCollection)
+const buttons = document.getElementsByClassName('btn');
+
+// By tag name (returns HTMLCollection)
+const paragraphs = document.getElementsByTagName('p');
+
+// CSS selector (returns first match)
+const nav = document.querySelector('.navigation');
+
+// CSS selector (returns all matches as NodeList)
+const links = document.querySelectorAll('a.external');</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="manipulating-elements">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manipulating-elements">#</doc-anchor-trigger>
+        <span>Manipulating Elements</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Change text content
+element.textContent = 'New text';
+
+// Change HTML content (be careful with XSS!)
+element.innerHTML = '&lt;strong&gt;Bold text&lt;/strong&gt;';
+
+// Change attributes
+element.setAttribute('data-id', '123');
+element.src = 'new-image.jpg';
+
+// Add/remove classes
+element.classList.add('active');
+element.classList.remove('hidden');
+element.classList.toggle('visible');
+element.classList.contains('active'); // returns boolean
+
+// Change styles (inline styles - use sparingly)
+element.style.color = 'blue';
+element.style.backgroundColor = '#f0f0f0';</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="creating-and-removing-elements">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-and-removing-elements">#</doc-anchor-trigger>
+        <span>Creating and Removing Elements</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Create element
+const newDiv = document.createElement('div');
+newDiv.textContent = 'I am new!';
+newDiv.className = 'container';
+
+// Add to DOM
+parentElement.appendChild(newDiv);
+parentElement.append(newDiv); // Modern, can append multiple
+parentElement.prepend(newDiv); // Add as first child
+
+// Insert at specific position
+referenceElement.before(newDiv);
+referenceElement.after(newDiv);
+referenceElement.replaceWith(newDiv);
+
+// Remove element
+oldElement.remove();
+parentElement.removeChild(oldElement);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="traversing-the-dom">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#traversing-the-dom">#</doc-anchor-trigger>
+        <span>Traversing the DOM</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Parent
+const parent = element.parentElement;
+
+// Children
+const children = element.children; // HTMLCollection
+const firstChild = element.firstElementChild;
+const lastChild = element.lastElementChild;
+
+// Siblings
+const next = element.nextElementSibling;
+const previous = element.previousElementSibling;
+
+// Closest ancestor matching selector
+const container = element.closest('.container');</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-add-task-functionality">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-add-task-functionality">#</doc-anchor-trigger>
+        <span>Exercise: Add Task Functionality</span>
+    </h3>
+</doc-anchor-target>
+<p>Create a <code v-pre>script.js</code> file and add basic functionality:</p>
+<p><strong>Requirements:</strong></p>
+<ol>
+<li>When user clicks &quot;Add&quot; button, create a new task item</li>
+<li>Clear the input field after adding</li>
+<li>Prevent empty tasks</li>
+</ol>
+<p><strong>Starter code:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const input = document.getElementById('task-input');
+const button = document.getElementById('add-btn');
+const list = document.getElementById('task-list');
+
+button.addEventListener('click', () =&gt; {
+  // Your code here:
+  // 1. Get input value
+  // 2. Create &lt;li&gt; element
+  // 3. Add to list
+  // 4. Clear input
+});</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~15 minutes</p>
+<doc-anchor-target id="event-handling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#event-handling">#</doc-anchor-trigger>
+        <span>Event Handling</span>
+    </h2>
+</doc-anchor-target>
+<p>Events allow JavaScript to respond to user interactions.</p>
+<doc-anchor-target id="adding-event-listeners">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-event-listeners">#</doc-anchor-trigger>
+        <span>Adding Event Listeners</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Modern approach (recommended)
+button.addEventListener('click', function(event) {
+  console.log('Button clicked!');
+  console.log(event.target); // The clicked element
+});
+
+// Arrow function
+button.addEventListener('click', (event) =&gt; {
+  console.log('Clicked:', event.target.textContent);
+});
+
+// Named function (useful for removing later)
+function handleClick(event) {
+  console.log('Clicked!');
+}
+
+button.addEventListener('click', handleClick);
+button.removeEventListener('click', handleClick);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="common-events">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-events">#</doc-anchor-trigger>
+        <span>Common Events</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Mouse events:</strong></p>
+<ul>
+<li><code v-pre>click</code> - Mouse click</li>
+<li><code v-pre>dblclick</code> - Double click</li>
+<li><code v-pre>mousedown</code> / <code v-pre>mouseup</code> - Mouse button pressed/released</li>
+<li><code v-pre>mouseenter</code> / <code v-pre>mouseleave</code> - Mouse enters/leaves element</li>
+<li><code v-pre>mousemove</code> - Mouse moves over element</li>
+</ul>
+<p><strong>Keyboard events:</strong></p>
+<ul>
+<li><code v-pre>keydown</code> - Key pressed down</li>
+<li><code v-pre>keyup</code> - Key released</li>
+<li><code v-pre>keypress</code> - Key pressed (legacy, use keydown)</li>
+</ul>
+<p><strong>Form events:</strong></p>
+<ul>
+<li><code v-pre>submit</code> - Form submitted</li>
+<li><code v-pre>change</code> - Input value changed (on blur)</li>
+<li><code v-pre>input</code> - Input value changed (immediate)</li>
+<li><code v-pre>focus</code> / <code v-pre>blur</code> - Element gains/loses focus</li>
+</ul>
+<p><strong>Window events:</strong></p>
+<ul>
+<li><code v-pre>load</code> - Page fully loaded</li>
+<li><code v-pre>DOMContentLoaded</code> - DOM parsed (use this!)</li>
+<li><code v-pre>resize</code> - Window resized</li>
+<li><code v-pre>scroll</code> - Page scrolled</li>
+</ul>
+<doc-anchor-target id="event-object">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#event-object">#</doc-anchor-trigger>
+        <span>Event Object</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">element.addEventListener('click', (event) =&gt; {
+  event.preventDefault(); // Prevent default behavior
+  event.stopPropagation(); // Stop bubbling
+  
+  console.log(event.target); // Element that triggered event
+  console.log(event.currentTarget); // Element with listener
+  console.log(event.type); // Event type
+  
+  // Mouse coordinates
+  console.log(event.clientX, event.clientY); // Relative to viewport
+  console.log(event.pageX, event.pageY); // Relative to document
+});</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="event-delegation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#event-delegation">#</doc-anchor-trigger>
+        <span>Event Delegation</span>
+    </h3>
+</doc-anchor-target>
+<p>Instead of adding listeners to many elements, add one to a parent:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Without delegation - inefficient for many items
+document.querySelectorAll('.item').forEach(item =&gt; {
+  item.addEventListener('click', handleClick);
+});
+
+// With delegation - one listener handles all
+document.getElementById('list').addEventListener('click', (event) =&gt; {
+  if (event.target.matches('.item')) {
+    handleClick(event);
+  }
+});</code></pre>
+</doc-codeblock></div>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Better performance with many elements</li>
+<li>Automatically works for dynamically added elements</li>
+<li>Less memory usage</li>
+</ul>
+<doc-anchor-target id="exercise-toggle-and-delete">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-toggle-and-delete">#</doc-anchor-trigger>
+        <span>Exercise: Toggle and Delete</span>
+    </h3>
+</doc-anchor-target>
+<p>Add two features:</p>
+<ol>
+<li><strong>Toggle completion:</strong> Clicking a checkbox toggles a <code v-pre>completed</code> class on the task</li>
+<li><strong>Delete task:</strong> Add delete buttons that remove tasks</li>
+</ol>
+<p><strong>Hint:</strong> Use event delegation on the list:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">list.addEventListener('click', (e) =&gt; {
+  if (e.target.matches('.delete-btn')) {
+    // Remove the task
+  }
+  if (e.target.matches('input[type=&quot;checkbox&quot;]')) {
+    // Toggle completed class
+  }
+});</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~15 minutes</p>
+<p><strong>Validation:</strong></p>
+<ul>
+<li>Test keyboard shortcuts work</li>
+<li>Test all three filter modes</li>
+<li>Verify event delegation works on newly added tasks</li>
+<li>Check that delete doesn&#x27;t toggle completion</li>
+</ul>
+<doc-anchor-target id="fetch-api">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fetch-api">#</doc-anchor-trigger>
+        <span>Fetch API</span>
+    </h2>
+</doc-anchor-target>
+<p>The Fetch API makes HTTP requests to servers.</p>
+<doc-anchor-target id="basic-get-request">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-get-request">#</doc-anchor-trigger>
+        <span>Basic GET Request</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">fetch('https://api.example.com/users')
+  .then(response =&gt; {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data =&gt; {
+    console.log(data);
+  })
+  .catch(error =&gt; {
+    console.error('Error:', error);
+  });</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="asyncawait-syntax">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#asyncawait-syntax">#</doc-anchor-trigger>
+        <span>Async/Await Syntax</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">async function getUsers() {
+  try {
+    const response = await fetch('https://api.example.com/users');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="post-request">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#post-request">#</doc-anchor-trigger>
+        <span>POST Request</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">async function createUser(userData) {
+  const response = await fetch('https://api.example.com/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  });
+  
+  return response.json();
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="request-options">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#request-options">#</doc-anchor-trigger>
+        <span>Request Options</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">fetch(url, {
+  method: 'GET', // GET, POST, PUT, DELETE, PATCH
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer token123',
+  },
+  body: JSON.stringify(data), // For POST/PUT
+  mode: 'cors', // cors, no-cors, same-origin
+  cache: 'no-cache', // default, no-cache, reload, force-cache
+});</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-fetch-api-optional">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-fetch-api-optional">#</doc-anchor-trigger>
+        <span>Exercise: Fetch API (Optional)</span>
+    </h3>
+</doc-anchor-target>
+<p>Load initial tasks from an API:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">async function loadTasks() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=3');
+  const tasks = await response.json();
+  // Display tasks in your list
+}
+
+loadTasks();</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~15 minutes (optional)</p>
+<doc-anchor-target id="browser-storage">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#browser-storage">#</doc-anchor-trigger>
+        <span>Browser Storage</span>
+    </h2>
+</doc-anchor-target>
+<p>Store data persistently in the browser.</p>
+<doc-anchor-target id="localstorage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#localstorage">#</doc-anchor-trigger>
+        <span>localStorage</span>
+    </h3>
+</doc-anchor-target>
+<p>Data persists until explicitly deleted:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Store data
+localStorage.setItem('username', 'john_doe');
+localStorage.setItem('settings', JSON.stringify({ theme: 'dark' }));
+
+// Retrieve data
+const username = localStorage.getItem('username');
+const settings = JSON.parse(localStorage.getItem('settings'));
+
+// Remove data
+localStorage.removeItem('username');
+
+// Clear all
+localStorage.clear();</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="sessionstorage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sessionstorage">#</doc-anchor-trigger>
+        <span>sessionStorage</span>
+    </h3>
+</doc-anchor-target>
+<p>Data persists only for the session:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Same API as localStorage
+sessionStorage.setItem('tempData', 'value');
+const data = sessionStorage.getItem('tempData');</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="storage-limits-and-considerations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#storage-limits-and-considerations">#</doc-anchor-trigger>
+        <span>Storage Limits and Considerations</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>localStorage: ~5-10MB</li>
+<li>sessionStorage: ~5-10MB</li>
+<li><strong>Only strings</strong> - use JSON.stringify/parse for objects</li>
+<li>Synchronous - can block main thread with large data</li>
+<li>Not secure - don&#x27;t store sensitive data</li>
+</ul>
+<doc-anchor-target id="exercise-save-to-localstorage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-save-to-localstorage">#</doc-anchor-trigger>
+        <span>Exercise: Save to localStorage</span>
+    </h3>
+</doc-anchor-target>
+<p>Make tasks persist after page refresh:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Save tasks whenever they change
+function saveTasks(tasks) {
+  localStorage.setItem('my-tasks', JSON.stringify(tasks));
+}
+
+// Load tasks on page load
+function loadTasks() {
+  const saved = localStorage.getItem('my-tasks');
+  return saved ? JSON.parse(saved) : [];
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~10 minutes</p>
+<doc-anchor-target id="browser-devtools">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#browser-devtools">#</doc-anchor-trigger>
+        <span>Browser DevTools</span>
+    </h2>
+</doc-anchor-target>
+<p>Master debugging with browser developer tools.</p>
+<doc-anchor-target id="console">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#console">#</doc-anchor-trigger>
+        <span>Console</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Different log levels
+console.log('General info');
+console.info('Information');
+console.warn('Warning!');
+console.error('Error!');
+
+// Grouping
+console.group('User Data');
+console.log('Name:', name);
+console.log('Age:', age);
+console.groupEnd();
+
+// Tables
+console.table(users);
+
+// Timing
+console.time('operation');
+// ... do something
+console.timeEnd('operation');
+
+// Assertions
+console.assert(x &gt; 0, 'x must be positive');</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="debugging">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugging">#</doc-anchor-trigger>
+        <span>Debugging</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Set breakpoints in DevTools Sources tab
+// Or use debugger statement
+function calculate(a, b) {
+  debugger; // Execution pauses here when DevTools open
+  return a + b;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="inspecting-elements">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inspecting-elements">#</doc-anchor-trigger>
+        <span>Inspecting Elements</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Elements tab</strong>: View and edit HTML/CSS live</li>
+<li><strong>Console tab</strong>: Run JavaScript, view logs</li>
+<li><strong>Sources tab</strong>: Debug JavaScript, set breakpoints</li>
+<li><strong>Network tab</strong>: Monitor HTTP requests</li>
+<li><strong>Application tab</strong>: View storage, service workers</li>
+<li><strong>Performance tab</strong>: Profile runtime performance</li>
+</ul>
+<doc-anchor-target id="exercise-debug-with-console">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-debug-with-console">#</doc-anchor-trigger>
+        <span>Exercise: Debug with Console</span>
+    </h3>
+</doc-anchor-target>
+<p>Use <code v-pre>console.log()</code> to trace what happens when you add a task:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">button.addEventListener('click', () =&gt; {
+  console.log('Button clicked');
+  console.log('Input value:', input.value);
+  // ... rest of your code
+});</code></pre>
+</doc-codeblock></div>
+<p>Open DevTools (F12) → Console tab to see the output.</p>
+<p><strong>Time:</strong> ~5 minutes</p>
+<doc-anchor-target id="forms-and-validation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#forms-and-validation">#</doc-anchor-trigger>
+        <span>Forms and Validation</span>
+    </h2>
+</doc-anchor-target>
+<p>Handle form submission and validation.</p>
+<doc-anchor-target id="form-submission">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#form-submission">#</doc-anchor-trigger>
+        <span>Form Submission</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const form = document.getElementById('signup-form');
+
+form.addEventListener('submit', (event) =&gt; {
+  event.preventDefault(); // Prevent page reload
+  
+  // Get form data
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  
+  // Or get individual fields
+  const email = form.querySelector('[name=&quot;email&quot;]').value;
+  
+  // Validate
+  if (!email.includes('@')) {
+    showError('Please enter a valid email');
+    return;
+  }
+  
+  // Submit
+  submitForm(data);
+});</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="html5-validation-api">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#html5-validation-api">#</doc-anchor-trigger>
+        <span>HTML5 Validation API</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const input = document.getElementById('email');
+
+// Check validity
+if (input.validity.valid) {
+  // Input is valid
+}
+
+// Validation properties
+input.validity.valueMissing; // true if required but empty
+input.validity.typeMismatch; // true if wrong format (e.g., email)
+input.validity.tooShort; // true if below minlength
+
+// Custom validation
+input.setCustomValidity('Please enter a valid email');
+input.setCustomValidity(''); // Clear error</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-simple-validation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-simple-validation">#</doc-anchor-trigger>
+        <span>Exercise: Simple Validation</span>
+    </h3>
+</doc-anchor-target>
+<p>Prevent empty or very short tasks:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function addTask() {
+  const text = input.value.trim();
+  
+  if (text.length &lt; 3) {
+    alert('Task must be at least 3 characters');
+    return;
+  }
+  
+  // Add the task...
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~5 minutes</p>
+<doc-anchor-target id="modern-javascript-in-browser">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modern-javascript-in-browser">#</doc-anchor-trigger>
+        <span>Modern JavaScript in Browser</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="modules">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modules">#</doc-anchor-trigger>
+        <span>Modules</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Export from module.js
+export const helper = () =&gt; 'help!';
+export default class MyClass { }
+
+// Import in main.js
+import MyClass, { helper } from './module.js';</code></pre>
+</doc-codeblock></div>
+<p>Use in HTML:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;script type=&quot;module&quot; src=&quot;main.js&quot;&gt;&lt;/script&gt;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="template-literals-for-html">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#template-literals-for-html">#</doc-anchor-trigger>
+        <span>Template Literals for HTML</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const user = { name: 'John', age: 30 };
+
+const html = `
+  &lt;div class=&quot;user-card&quot;&gt;
+    &lt;h2&gt;${user.name}&lt;/h2&gt;
+    &lt;p&gt;Age: ${user.age}&lt;/p&gt;
+  &lt;/div&gt;
+`;
+
+document.getElementById('container').innerHTML = html;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="destructuring-and-spread">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#destructuring-and-spread">#</doc-anchor-trigger>
+        <span>Destructuring and Spread</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Destructure event target
+button.addEventListener('click', ({ target }) =&gt; {
+  console.log(target.textContent);
+});
+
+// Spread for merging objects
+const defaultSettings = { theme: 'light', fontSize: 16 };
+const userSettings = { theme: 'dark' };
+const settings = { ...defaultSettings, ...userSettings };</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="best-practices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practices">#</doc-anchor-trigger>
+        <span>Best Practices</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Use strict mode</strong>: <code v-pre>'use strict';</code> or ES modules (strict by default)</li>
+<li><strong>Cache DOM queries</strong>: Query once, reuse the reference</li>
+<li><strong>Remove event listeners</strong>: When removing elements, clean up listeners</li>
+<li><strong>Debounce expensive operations</strong>: Resize, scroll handlers</li>
+<li><strong>Validate on both sides</strong>: Client-side for UX, server-side for security</li>
+<li><strong>Progressive enhancement</strong>: Site works without JavaScript, enhanced with it</li>
+<li><strong>Avoid innerHTML with user data</strong>: XSS risk, use textContent instead</li>
+</ul>
+<doc-anchor-target id="performance-tips">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#performance-tips">#</doc-anchor-trigger>
+        <span>Performance Tips</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Bad - queries DOM on every iteration
+for (let i = 0; i &lt; 100; i++) {
+  document.getElementById('list').appendChild(item);
+}
+
+// Good - cache reference, use DocumentFragment
+const list = document.getElementById('list');
+const fragment = document.createDocumentFragment();
+for (let i = 0; i &lt; 100; i++) {
+  fragment.appendChild(item);
+}
+list.appendChild(fragment);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="tools--resources">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tools--resources">#</doc-anchor-trigger>
+        <span>Tools &amp; Resources</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API">MDN Web APIs</a> - Complete API reference</li>
+<li><a href="https://caniuse.com/">Can I Use</a> - Browser support tables</li>
+<li><a href="https://javascript.info/">JavaScript.info</a> - Modern JavaScript tutorial</li>
+<li><a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools</a> - Debugging guide</li>
+</ul>
+<doc-anchor-target id="worth-knowing-advanced">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#worth-knowing-advanced">#</doc-anchor-trigger>
+        <span>Worth Knowing (Advanced)</span>
+    </h2>
+</doc-anchor-target>
+<p>These concepts are worth mentioning but don&#x27;t learn them now:</p>
+<ul>
+<li>Web Components (Custom Elements, Shadow DOM)</li>
+<li>Service Workers and PWAs</li>
+<li>WebSockets for real-time communication</li>
+<li>Web Workers for background processing</li>
+<li>IndexedDB for complex client-side storage</li>
+<li>Intersection Observer API (lazy loading)</li>
+<li>Mutation Observer API (watch DOM changes)</li>
+<li>History API (SPA routing)</li>
+<li>Drag and Drop API</li>
+<li>File API (reading files client-side)</li>
+</ul>
+<doc-anchor-target id="next-steps">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#next-steps">#</doc-anchor-trigger>
+        <span>Next steps</span>
+    </h2>
+</doc-anchor-target>
+<p>Congratulations! You&#x27;ve learned the three pillars of frontend development:</p>
+<ol>
+<li><strong>HTML</strong> - Structure and semantics ✓</li>
+<li><strong>CSS</strong> - Styling and layout ✓</li>
+<li><strong>JavaScript</strong> - Interactivity ✓</li>
+</ol>
+<p>You now have a working task list application. While it&#x27;s basic, it demonstrates the core concepts you&#x27;ll use with modern frontend frameworks.</p>
+<doc-anchor-target id="what-to-learn-next">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-to-learn-next">#</doc-anchor-trigger>
+        <span>What to learn next:</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Frontend frameworks</strong>: React, Vue, or Angular (these handle the DOM manipulation for you)</li>
+<li><strong>Build tools</strong>: Vite or Webpack</li>
+<li><strong>TypeScript</strong>: Add type safety to your code</li>
+<li><strong>Testing</strong>: Jest, Cypress</li>
+</ul>
+<p><strong>Note:</strong> In real projects, you&#x27;ll use CSS frameworks (Bootstrap, Tailwind) and component libraries rather than writing all CSS from scratch. This training focused on understanding the fundamentals.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../frontend/css/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">CSS - Cascading Style Sheets</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../frontend/html/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">HTML - Hyper​Text Markup Language</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Frontend JavaScript", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

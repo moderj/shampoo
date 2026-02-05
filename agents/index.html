@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823591487728">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>AGENTS.md - Space Super-gun Developer Training Wiki</title>
+    <meta name="title" content="AGENTS.md - Space Super-gun Developer Training Wiki">
+    <meta name="description" content="This is a developer training wiki designed to onboard and train developers to become \"Space Super-gun Developers\" - highly skilled full-stack...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.example.com/agents/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.example.com/agents/">
+    <meta property="og:title" content="AGENTS.md - Space Super-gun Developer Training Wiki">
+    <meta property="og:description" content="This is a developer training wiki designed to onboard and train developers to become \"Space Super-gun Developers\" - highly skilled full-stack...">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.example.com/agents/">
+    <meta property="twitter:title" content="AGENTS.md - Space Super-gun Developer Training Wiki">
+    <meta property="twitter:description" content="This is a developer training wiki designed to onboard and train developers to become \"Space Super-gun Developers\" - highly skilled full-stack...">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../resources/css/retype.css?v=3.11.0.823591487728" rel="stylesheet">
+
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.823591487728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.823591487728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.823591487728" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="agentsmd---space-super-gun-developer-training-wiki" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#agentsmd---space-super-gun-developer-training-wiki">#</doc-anchor-trigger>
+        <span>AGENTS.md - Space Super-gun Developer Training Wiki</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="project-overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#project-overview">#</doc-anchor-trigger>
+        <span>Project Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>This is a <strong>developer training wiki</strong> designed to onboard and train developers to become &quot;Space Super-gun Developers&quot; - highly skilled full-stack developers with expertise in modern development workflows, Node.js, and software design principles.</p>
+<p>The wiki follows a <strong>modular learning path structure</strong> where each topic is broken down into digestible modules with clear learning objectives, practical exercises, and estimated completion times.</p>
+<doc-anchor-target id="project-structure">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#project-structure">#</doc-anchor-trigger>
+        <span>Project Structure</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">shampoo.wiki/
+├── home.md                    # Landing page with welcome message
+├── _sidebar.md               # Navigation index
+├── Setup.md                  # Environment setup guide (WSL, VS Code, Docker)
+├── Workflow/                 # Development workflow training
+│   ├── Workflow.md          # Path introduction &amp; overview
+│   ├── Linux.md             # Self-learning module
+│   └── Git.md               # Mentor-validated module with project
+├── Node/                     # Node.js &amp; JavaScript training
+│   ├── Node.md              # Path introduction &amp; overview
+│   ├── Javascript.md        # Core JS concepts + exercises
+│   ├── Asynchronous-Javascript.md  # Async patterns
+│   ├── Call-Of-Duty.md      # Hands-on project
+│   ├── TypeScript.md        # Type safety
+│   └── Testing-Javascript.md # Testing practices
+├── Frontend/                 # Frontend development training
+│   ├── Frontend.md          # Path introduction &amp; overview
+│   ├── HTML.md              # Structure and semantics
+│   ├── CSS.md               # Styling with Flexbox and Grid
+│   └── javascript-vanilla.md # Browser-side interactivity
+└── Code-Design/              # Software design principles
+    └── Code-Design.md       # Curated video resources</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="key-characteristics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-characteristics">#</doc-anchor-trigger>
+        <span>Key Characteristics</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Self-directed learning</strong>: Learners can choose their own resources (videos, docs, tutorials)</li>
+<li><strong>Progressive difficulty</strong>: Topics range from beginner to expert levels</li>
+<li><strong>Practical focus</strong>: Includes coding exercises, projects, and real-world scenarios</li>
+<li><strong>Mentor integration</strong>: Some modules require mentor validation</li>
+<li><strong>Modular design</strong>: Each path can be completed independently</li>
+</ul>
+<hr>
+<doc-anchor-target id="how-to-write-exceptional-training-paths">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-write-exceptional-training-paths">#</doc-anchor-trigger>
+        <span>How to Write Exceptional Training Paths</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="1-module-structure-template">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-module-structure-template">#</doc-anchor-trigger>
+        <span>1. Module Structure Template</span>
+    </h3>
+</doc-anchor-target>
+<p>Every training module should follow this structure:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markdown"><code v-pre class="language-markdown"># [Topic Name]
+
+&gt; _Estimation time: X-Y Days_
+
+---
+
+Brief description of what this module covers and why it matters.
+
+**_Learning objectives:_**
+
+At the end of this module, you'll be able to:
+
+- [Specific, measurable outcome 1]
+- [Specific, measurable outcome 2]
+- [Specific, measurable outcome 3]
+
+---
+
+_Send me back [home](home)_
+
+[[_TOC_]]
+
+---
+
+## Prerequisites
+
+List any required knowledge or completed modules before starting.
+
+## Core Content Sections
+
+### Section 1: [Concept Name]
+
+Explanation + code examples + external resources
+
+### Section 2: [Concept Name]
+
+Continue pattern...
+
+## Practical Exercises
+
+### Exercise 1: [Name]
+
+[Problem description]
+
+// Code example or starter code
+
+**Expected output:**
+
+[What success looks like]
+
+### Exercise 2: [Name]
+
+[More challenging problem]
+
+## Advanced Topics (Optional)
+
+Concepts worth knowing but not required:
+
+- [Advanced concept 1]
+- [Advanced concept 2]
+
+## Tools &amp; Resources
+
+- [Tool name](link) - Brief description
+- [Resource name](link) - Brief description
+
+## Next steps
+
+[Clear call-to-action linking to next module]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="2-writing-rules-for-exceptional-content">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-writing-rules-for-exceptional-content">#</doc-anchor-trigger>
+        <span>2. Writing Rules for Exceptional Content</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="a-learning-objectives-must">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-learning-objectives-must">#</doc-anchor-trigger>
+        <span>A. Learning Objectives (MUST)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Be specific and measurable</strong>: &quot;Understand async/await&quot; → &quot;Write async functions that handle multiple concurrent API calls&quot;</li>
+<li><strong>Use action verbs</strong>: Write, Create, Debug, Implement, Analyze</li>
+<li><strong>Limit to 3-5 objectives</strong>: Focus on core competencies</li>
+<li><strong>Align with real-world tasks</strong>: What will they actually do with this knowledge?</li>
+</ul>
+<doc-anchor-target id="b-time-estimates-must">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#b-time-estimates-must">#</doc-anchor-trigger>
+        <span>B. Time Estimates (MUST)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Be realistic</strong>: Account for reading, practice, and exercises</li>
+<li><strong>Provide ranges</strong>: &quot;3-5 Days&quot; acknowledges different learning speeds</li>
+<li><strong>Include all activities</strong>: Reading + exercises + project work</li>
+<li><strong>Adjust for difficulty</strong>: Complex topics need more time</li>
+</ul>
+<doc-anchor-target id="c-content-organization-must">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#c-content-organization-must">#</doc-anchor-trigger>
+        <span>C. Content Organization (MUST)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Progressive disclosure</strong>: Basics → Intermediate → Advanced</li>
+<li><strong>Concept-then-practice</strong>: Explain, then immediately exercise</li>
+<li><strong>Code-first examples</strong>: Show working code before explaining theory</li>
+<li><strong>Multiple learning modalities</strong>: Links to videos, docs, and interactive tutorials</li>
+</ul>
+<doc-anchor-target id="d-practical-exercises-must">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#d-practical-exercises-must">#</doc-anchor-trigger>
+        <span>D. Practical Exercises (MUST)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Start simple</strong>: Build confidence with easy wins</li>
+<li><strong>Increase difficulty gradually</strong>: Each exercise builds on the last</li>
+<li><strong>Include real scenarios</strong>: Avoid abstract &quot;foo bar&quot; examples</li>
+<li><strong>Provide solutions</strong>: Either inline or in a separate file</li>
+<li><strong>Add stretch goals</strong>: Bonus challenges for fast learners</li>
+</ul>
+<doc-anchor-target id="e-navigation--ux-must">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#e-navigation--ux-must">#</doc-anchor-trigger>
+        <span>E. Navigation &amp; UX (MUST)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Consistent headers</strong>: Use the template structure</li>
+<li><strong>Table of contents</strong>: Use <code v-pre>[[_TOC_]]</code> for automatic generation</li>
+<li><strong>Breadcrumb links</strong>: Always include &quot;Send me back <a href="../">home</a>&quot;</li>
+<li><strong>Clear next steps</strong>: End with explicit guidance on what to do next</li>
+<li><strong>Cross-link related content</strong>: Connect to other modules when relevant</li>
+</ul>
+<doc-anchor-target id="f-external-resources-should">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#f-external-resources-should">#</doc-anchor-trigger>
+        <span>F. External Resources (SHOULD)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Curate, don&#x27;t dump</strong>: 3-5 high-quality resources beat 20 mediocre ones</li>
+<li><strong>Diversify formats</strong>: Mix videos, articles, documentation, and interactive sites</li>
+<li><strong>Annotate links</strong>: Briefly explain what each resource covers</li>
+<li><strong>Prefer official docs</strong>: MDN, Node.js docs, framework documentation</li>
+<li><strong>Include duration</strong>: &quot;(30 minutes)&quot; helps learners plan</li>
+</ul>
+<doc-anchor-target id="g-code-examples-should">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#g-code-examples-should">#</doc-anchor-trigger>
+        <span>G. Code Examples (SHOULD)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Be copy-paste ready</strong>: Working code that runs without modification</li>
+<li><strong>Use realistic variable names</strong>: <code v-pre>userProfile</code> not <code v-pre>obj</code></li>
+<li><strong>Include comments</strong>: Explain the &quot;why&quot; not just the &quot;what&quot;</li>
+<li><strong>Show expected output</strong>: Demonstrate what success looks like</li>
+<li><strong>Cover edge cases</strong>: Show how to handle errors and unexpected input</li>
+</ul>
+<doc-anchor-target id="3-module-types">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-module-types">#</doc-anchor-trigger>
+        <span>3. Module Types</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="type-a-self-learning-module">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type-a-self-learning-module">#</doc-anchor-trigger>
+        <span>Type A: Self-Learning Module</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Learner-driven exploration</li>
+<li>External resource heavy</li>
+<li>No mandatory deliverables</li>
+<li>Optional exercises</li>
+</ul>
+<p><strong>Example:</strong> <code v-pre>Workflow/Linux.md</code></p>
+<p><strong>Template additions:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markdown"><code v-pre class="language-markdown">**Learning approach:**
+This is a self-learning module. Explore the resources below at your own pace.
+There are no mandatory exercises, but we recommend trying the commands as you read.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="type-b-project-based-module">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type-b-project-based-module">#</doc-anchor-trigger>
+        <span>Type B: Project-Based Module</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Hands-on coding project</li>
+<li>Specific requirements and acceptance criteria</li>
+<li>Mentor validation required</li>
+<li>Builds portfolio piece</li>
+</ul>
+<p><strong>Example:</strong> <code v-pre>Node/Call-Of-Duty.md</code></p>
+<p><strong>Template additions:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markdown"><code v-pre class="language-markdown">## Project Requirements
+
+### Functional Requirements
+- [ ] Feature 1 description
+- [ ] Feature 2 description
+
+### Technical Requirements
+- [ ] Use specific technology/pattern
+- [ ] Follow specific convention
+
+### Acceptance Criteria
+1. [Specific testable criterion]
+2. [Specific testable criterion]
+
+## Submission
+
+Submit your project to your mentor for review via [method].</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="type-c-concept-module">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type-c-concept-module">#</doc-anchor-trigger>
+        <span>Type C: Concept Module</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Deep dive into specific technology/concept</li>
+<li>Mix of theory and practice</li>
+<li>Exercises with solutions</li>
+<li>May include quiz questions</li>
+</ul>
+<p><strong>Example:</strong> <code v-pre>Node/Javascript.md</code></p>
+<p><strong>Template additions:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markdown"><code v-pre class="language-markdown">## Concept Check
+
+Test your understanding:
+
+1. [Question about concept]
+2. [Question about edge case]
+
+==- Answers
+1. [Explanation]
+2. [Explanation]
+===</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="type-d-resource-collection">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type-d-resource-collection">#</doc-anchor-trigger>
+        <span>Type D: Resource Collection</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Curated list of external resources</li>
+<li>Organized by difficulty level</li>
+<li>Minimal original content</li>
+<li>Reference material</li>
+</ul>
+<p><strong>Example:</strong> <code v-pre>Code-Design/Code-Design.md</code></p>
+<p><strong>Template additions:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markdown"><code v-pre class="language-markdown">## Beginner
+
+### [Topic]
+
+- [Resource title](link) (duration)
+  - Brief description of what this covers
+  - Why it's valuable
+
+## Intermediate
+
+### [Topic]
+
+[Continue pattern...]
+
+## Expert
+
+### [Topic]
+
+[Continue pattern...]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="4-style-guidelines">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-style-guidelines">#</doc-anchor-trigger>
+        <span>4. Style Guidelines</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="tone--voice">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tone--voice">#</doc-anchor-trigger>
+        <span>Tone &amp; Voice</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Encouraging but realistic</strong>: &quot;This is challenging but achievable&quot;</li>
+<li><strong>Professional but approachable</strong>: Avoid overly academic language</li>
+<li><strong>Action-oriented</strong>: Use imperative mood for instructions</li>
+<li><strong>Inclusive</strong>: &quot;you&quot; not &quot;the student&quot;, &quot;we&quot; not &quot;the instructors&quot;</li>
+</ul>
+<doc-anchor-target id="formatting">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#formatting">#</doc-anchor-trigger>
+        <span>Formatting</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Headers</strong>: Use sentence case (&quot;Learning objectives&quot; not &quot;Learning Objectives&quot;)</li>
+<li><strong>Code blocks</strong>: Always specify language for syntax highlighting</li>
+<li><strong>Lists</strong>: Use bullet points for unordered, numbers for sequential steps</li>
+<li><strong>Emphasis</strong>: Use <strong>bold</strong> for key terms, <em>italics</em> for emphasis</li>
+<li><strong>Links</strong>: Use descriptive text (&quot;<a href="../setup/">Linux setup guide</a>&quot; not &quot;<a href="../setup/">click here</a>&quot;)</li>
+</ul>
+<doc-anchor-target id="visual-structure">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#visual-structure">#</doc-anchor-trigger>
+        <span>Visual Structure</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Use horizontal rules</strong> (<code v-pre>---</code>) to separate major sections</li>
+<li><strong>Limit line length</strong>: ~80-100 characters for readability</li>
+<li><strong>Whitespace matters</strong>: Separate sections with blank lines</li>
+<li><strong>Consistent indentation</strong>: 2 spaces for nested lists</li>
+</ul>
+<doc-anchor-target id="5-quality-checklist">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-quality-checklist">#</doc-anchor-trigger>
+        <span>5. Quality Checklist</span>
+    </h3>
+</doc-anchor-target>
+<p>Before publishing any new module, verify:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Estimation time provided and realistic</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Learning objectives are specific and measurable</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Prerequisites clearly stated</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Content follows progressive difficulty</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> At least 2-3 practical exercises included</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Code examples are tested and working</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> External resources are high-quality and diverse</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Navigation links work (home, sidebar, next steps)</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Table of contents renders correctly</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> No broken links or references</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Tone is consistent with other modules</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Spell-checked and grammar-checked</li>
+</ul>
+<doc-anchor-target id="6-adding-new-learning-paths">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-adding-new-learning-paths">#</doc-anchor-trigger>
+        <span>6. Adding New Learning Paths</span>
+    </h3>
+</doc-anchor-target>
+<p>When creating entirely new training paths:</p>
+<ol>
+<li><p><strong>Create path overview</strong> (e.g., <code v-pre>NewTopic/NewTopic.md</code>)</p>
+<ul>
+<li>Follow the introduction template</li>
+<li>List all modules in the path</li>
+<li>Set overall time estimate</li>
+</ul>
+</li>
+<li><p><strong>Create individual modules</strong></p>
+<ul>
+<li>Follow module type template</li>
+<li>Link back to path overview</li>
+</ul>
+</li>
+<li><p><strong>Update navigation</strong></p>
+<ul>
+<li>Add to <code v-pre>_sidebar.md</code></li>
+<li>Ensure all cross-links work</li>
+</ul>
+</li>
+<li><p><strong>Update home.md</strong></p>
+<ul>
+<li>If it&#x27;s a major path, mention on home page</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="examples-of-excellence">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-excellence">#</doc-anchor-trigger>
+        <span>Examples of Excellence</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="best-practice-examples-in-this-wiki">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practice-examples-in-this-wiki">#</doc-anchor-trigger>
+        <span>Best Practice Examples in This Wiki</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Clear learning objectives</strong>: <code v-pre>Node/Node.md</code> lines 26-32</li>
+<li><strong>Progressive exercises</strong>: <code v-pre>Node/Javascript.md</code> lines 97-256</li>
+<li><strong>Good resource curation</strong>: <code v-pre>Code-Design/Code-Design.md</code></li>
+<li><strong>Clear next steps</strong>: <code v-pre>Workflow/Workflow.md</code> line 31</li>
+<li><strong>Practical project setup</strong>: <code v-pre>Node/Call-Of-Duty.md</code></li>
+</ol>
+<doc-anchor-target id="common-pitfalls-to-avoid">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-pitfalls-to-avoid">#</doc-anchor-trigger>
+        <span>Common Pitfalls to Avoid</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Vague objectives</strong>: &quot;Understand JavaScript&quot; → &quot;Write async functions&quot;</li>
+<li><strong>Missing time estimates</strong>: Always provide realistic timelines</li>
+<li><strong>Wall of text</strong>: Break content into sections with headers</li>
+<li><strong>No practical application</strong>: Always include exercises</li>
+<li><strong>Broken navigation</strong>: Test all links before publishing</li>
+<li><strong>Inconsistent formatting</strong>: Follow the style guidelines</li>
+<li><strong>Outdated resources</strong>: Verify external links periodically</li>
+</ol>
+<hr>
+<doc-anchor-target id="maintenance-guidelines">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#maintenance-guidelines">#</doc-anchor-trigger>
+        <span>Maintenance Guidelines</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="regular-reviews">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#regular-reviews">#</doc-anchor-trigger>
+        <span>Regular Reviews</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Quarterly</strong>: Check all external links for validity</li>
+<li><strong>Bi-annually</strong>: Review and update time estimates based on learner feedback</li>
+<li><strong>Annually</strong>: Assess if content aligns with current industry practices</li>
+</ul>
+<doc-anchor-target id="version-control">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#version-control">#</doc-anchor-trigger>
+        <span>Version Control</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Track changes to training content</li>
+<li>Document major revisions in commit messages</li>
+<li>Tag stable versions of the curriculum</li>
+</ul>
+<doc-anchor-target id="feedback-integration">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#feedback-integration">#</doc-anchor-trigger>
+        <span>Feedback Integration</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Collect learner feedback on difficulty and clarity</li>
+<li>Adjust time estimates based on actual completion times</li>
+<li>Add new resources based on emerging best practices</li>
+</ul>
+<hr>
+<doc-anchor-target id="quick-reference">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-reference">#</doc-anchor-trigger>
+        <span>Quick Reference</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="markdown-shortcuts-used">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#markdown-shortcuts-used">#</doc-anchor-trigger>
+        <span>Markdown Shortcuts Used</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>[[_TOC_]]</code> - Automatic table of contents</li>
+<li><code v-pre>[text](file)</code> - Internal wiki links</li>
+<li><code v-pre>[text](url)</code> - External links</li>
+<li><code v-pre>`code`</code> - Inline code</li>
+<li><code v-pre>```language</code> - Code blocks with syntax highlighting</li>
+<li><code v-pre>---</code> - Horizontal rule (section separator)</li>
+<li><code v-pre>&gt; </code> - Blockquotes for callouts</li>
+</ul>
+<doc-anchor-target id="file-naming-convention">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#file-naming-convention">#</doc-anchor-trigger>
+        <span>File Naming Convention</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Use kebab-case: <code v-pre>Asynchronous-Javascript.md</code></li>
+<li>Match the link text in sidebar: <code v-pre>[Asynchronous in Javascript](Node/Asynchronous-Javascript)</code></li>
+<li>Keep names descriptive but concise</li>
+</ul>
+<doc-anchor-target id="link-patterns">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#link-patterns">#</doc-anchor-trigger>
+        <span>Link Patterns</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Home: <code v-pre>[home](home)</code></li>
+<li>Sidebar: <code v-pre>[_sidebar](_sidebar)</code></li>
+<li>Other modules: <code v-pre>[Module Name](Path/Module-File)</code></li>
+<li>External: <code v-pre>[Descriptive Text](https://example.com)</code></li>
+</ul>
+<hr>
+<p><strong>Remember</strong>: The goal is to create training content that empowers developers to learn effectively. Every module should leave the learner feeling capable and prepared for the next step in their journey.</p>
+<p><em>Last updated: 2026-02-02</em></p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../react/foundations/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">React Foundations</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../code-design/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Code Design</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "AGENTS.md - Space Super-gun Developer Training Wiki", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823591487728">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>CSS - Cascading Style Sheets</title>
+    <meta name="title" content="CSS - Cascading Style Sheets">
+    <meta name="description" content="Estimation time: 4-6 Days">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.example.com/frontend/css/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.example.com/frontend/css/">
+    <meta property="og:title" content="CSS - Cascading Style Sheets">
+    <meta property="og:description" content="Estimation time: 4-6 Days">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.example.com/frontend/css/">
+    <meta property="twitter:title" content="CSS - Cascading Style Sheets">
+    <meta property="twitter:description" content="Estimation time: 4-6 Days">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../resources/css/retype.css?v=3.11.0.823591487728" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.823591487728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.823591487728" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.823591487728" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="css---cascading-style-sheets" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#css---cascading-style-sheets">#</doc-anchor-trigger>
+        <span>CSS - Cascading Style Sheets</span>
+    </h1>
+</doc-anchor-target>
+<blockquote>
+<p><em>Estimation time: 4-6 Days</em></p>
+</blockquote>
+<hr>
+<p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. It controls layout, colors, fonts, animations, and responsive design.</p>
+<p>The reason you are learning CSS is because structure without style is boring. CSS transforms plain HTML into beautiful, engaging user interfaces. Modern CSS includes powerful layout systems like Flexbox and Grid that make complex layouts straightforward.</p>
+<p>Make sure you understand the learning concepts and <strong>practice by building</strong> - CSS is best learned through experimentation!</p>
+<hr>
+<p><strong><em>Learning objectives:</em></strong></p>
+<p>At the end of this module, you&#x27;ll be able to:</p>
+<ul>
+<li>Apply styles using selectors, properties, and values</li>
+<li>Create layouts using Flexbox and CSS Grid</li>
+<li>Build responsive designs with media queries</li>
+<li>Use CSS variables for maintainable code</li>
+<li>Implement animations and transitions</li>
+<li>Understand the box model and positioning</li>
+</ul>
+<hr>
+<p><em>Send me back <a href="home">home</a></em></p>
+<p><a href="_toc_"> TOC </a></p>
+<hr>
+<p><strong>Learning note</strong>: CSS is visual - experiment constantly! Use browser DevTools to test styles in real-time. If you find useful resources, please share them with me.</p>
+<p>Here are some example links:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics">MDN CSS Basics</a> (45 minutes)</li>
+<li><a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course</a> (1.5 hours)</li>
+<li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a> - Interactive Flexbox game</li>
+<li><a href="https://cssgridgarden.com/">CSS Grid Garden</a> - Interactive Grid game</li>
+<li><a href="https://css-tricks.com/">CSS-Tricks</a> - Comprehensive CSS reference</li>
+<li><a href="https://cssbattle.dev/">CSS-Battle</a> - Interactive CSS challenges (recommended)</li>
+</ul>
+<doc-anchor-target id="css-basics">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#css-basics">#</doc-anchor-trigger>
+        <span>CSS Basics</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="ways-to-add-css">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ways-to-add-css">#</doc-anchor-trigger>
+        <span>Ways to Add CSS</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Inline styles</strong> (avoid when possible):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;p style=&quot;color: blue; font-size: 16px;&quot;&gt;Blue text&lt;/p&gt;</code></pre>
+</doc-codeblock></div>
+<p><strong>Internal stylesheet</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;head&gt;
+  &lt;style&gt;
+    p { color: blue; }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+</doc-codeblock></div>
+<p><strong>External stylesheet</strong> (recommended):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+&lt;/head&gt;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="css-syntax">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#css-syntax">#</doc-anchor-trigger>
+        <span>CSS Syntax</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">selector {
+  property: value;
+  property: value;
+}</code></pre>
+</doc-codeblock></div>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="selectors">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selectors">#</doc-anchor-trigger>
+        <span>Selectors</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Basic selectors:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Element selector */
+p { color: black; }
+
+/* Class selector */
+.container { max-width: 1200px; }
+
+/* ID selector */
+#header { background: #f0f0f0; }
+
+/* Universal selector */
+* { box-sizing: border-box; }</code></pre>
+</doc-codeblock></div>
+<p><strong>Combinators:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Descendant (space) */
+nav a { text-decoration: none; }
+
+/* Direct child (&gt;) */
+ul &gt; li { list-style: square; }
+
+/* Adjacent sibling (+) */
+h2 + p { margin-top: 0; }
+
+/* General sibling (~) */
+h2 ~ p { color: gray; }</code></pre>
+</doc-codeblock></div>
+<p><strong>Pseudo-classes:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Hover state */
+button:hover { background: #0056b3; }
+
+/* Focus state */
+input:focus { border-color: blue; }
+
+/* First child */
+li:first-child { font-weight: bold; }
+
+/* Nth child */
+li:nth-child(odd) { background: #f5f5f5; }
+
+/* Not selector */
+button:not(.disabled) { cursor: pointer; }</code></pre>
+</doc-codeblock></div>
+<p><strong>Pseudo-elements:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* First line */
+p::first-line { font-weight: bold; }
+
+/* Before content */
+.required::before { content: &quot;* &quot;; color: red; }
+
+/* After content */
+.external-link::after { content: &quot; ↗&quot;; }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="questions---selectors">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#questions---selectors">#</doc-anchor-trigger>
+        <span>Questions - Selectors</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>What is the difference between <code v-pre>.class</code> and <code v-pre>#id</code> selectors?</li>
+<li>When would you use a direct child selector (<code v-pre>&gt;</code>) instead of a descendant selector (space)?</li>
+<li>What is specificity and how does it affect which styles are applied?</li>
+</ol>
+<doc-anchor-target id="the-box-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-box-model">#</doc-anchor-trigger>
+        <span>The Box Model</span>
+    </h2>
+</doc-anchor-target>
+<p>Every element in CSS is a rectangular box. Understanding the box model is crucial for layout.</p>
+<doc-anchor-target id="box-model-components">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#box-model-components">#</doc-anchor-trigger>
+        <span>Box Model Components</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">┌─────────────────────────────┐
+│          Margin             │
+│   ┌─────────────────────┐   │
+│   │      Border         │   │
+│   │   ┌─────────────┐   │   │
+│   │   │   Padding   │   │   │
+│   │   │   ┌─────┐   │   │   │
+│   │   │   │Content│ │   │   │
+│   │   │   └─────┘   │   │   │
+│   │   └─────────────┘   │   │
+│   └─────────────────────┘   │
+└─────────────────────────────┘</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.box {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border: 2px solid black;
+  margin: 10px;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Total width</strong> = width + padding-left + padding-right + border-left + border-right + margin-left + margin-right</p>
+<doc-anchor-target id="box-sizing">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#box-sizing">#</doc-anchor-trigger>
+        <span>Box Sizing</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Default - width/height only includes content */
+box-sizing: content-box;
+
+/* Recommended - width/height includes padding and border */
+box-sizing: border-box;</code></pre>
+</doc-codeblock></div>
+<p>Always set <code v-pre>box-sizing: border-box</code> globally:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-style-your-task-list-with-flexbox">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-style-your-task-list-with-flexbox">#</doc-anchor-trigger>
+        <span>Exercise: Style Your Task List with Flexbox</span>
+    </h3>
+</doc-anchor-target>
+<p>Create a <code v-pre>styles.css</code> file and link it to your HTML. This exercise teaches Flexbox through practical examples.</p>
+<doc-anchor-target id="step-1-basic-setup">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-basic-setup">#</doc-anchor-trigger>
+        <span>Step 1: Basic Setup</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="step-2-flexbox-for-input-row">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-flexbox-for-input-row">#</doc-anchor-trigger>
+        <span>Step 2: Flexbox for Input Row</span>
+    </h4>
+</doc-anchor-target>
+<p>Make the input and button sit side by side:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-row input {
+  flex: 1; /* Takes all available space */
+  padding: 8px;
+}
+
+.input-row button {
+  padding: 8px 16px;
+  white-space: nowrap; /* Prevents button text from wrapping */
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>How <code v-pre>flex: 1</code> works:</strong></p>
+<ul>
+<li>The input grows to fill available space</li>
+<li>The button keeps its natural width</li>
+<li>Gap adds space between them</li>
+</ul>
+<p><strong>Try changing:</strong></p>
+<ul>
+<li><code v-pre>flex: 1</code> to <code v-pre>flex: 2</code> on input - see how it takes more space</li>
+<li>Add <code v-pre>flex-wrap: wrap</code> - see what happens on small screens</li>
+<li>Change <code v-pre>gap</code> to <code v-pre>20px</code> or <code v-pre>5px</code> - observe spacing changes</li>
+</ul>
+<doc-anchor-target id="step-3-flexbox-for-task-items">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-flexbox-for-task-items">#</doc-anchor-trigger>
+        <span>Step 3: Flexbox for Task Items</span>
+    </h4>
+</doc-anchor-target>
+<p>Align checkbox and text horizontally:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.task-item {
+  display: flex;
+  align-items: center; /* Vertically centers items */
+  gap: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item input[type=&quot;checkbox&quot;] {
+  /* Checkbox keeps its natural size */
+}
+
+.task-item span {
+  flex: 1; /* Text takes remaining space */
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>How <code v-pre>align-items: center</code> works:</strong></p>
+<ul>
+<li>Without it: items align to top (try removing it!)</li>
+<li>With <code v-pre>flex-start</code>: items align to top</li>
+<li>With <code v-pre>flex-end</code>: items align to bottom</li>
+<li>With <code v-pre>center</code>: items vertically centered</li>
+</ul>
+<p><strong>Visual comparison:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">Without align-items:        With align-items: center:
+[ ] Task text               [ ] Task text
+     Delete                      Delete
+(Checkbox and text          (Everything aligned
+ not aligned)                to center)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="step-4-visual-polish">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-visual-polish">#</doc-anchor-trigger>
+        <span>Step 4: Visual Polish</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Experiment:</strong> Try these Flexbox variations in DevTools:</p>
+<ol>
+<li><code v-pre>justify-content: space-between</code> - pushes items to edges</li>
+<li><code v-pre>flex-direction: column</code> - stacks items vertically</li>
+<li><code v-pre>order: -1</code> on checkbox - moves it to the end</li>
+</ol>
+<p><strong>Time:</strong> ~20 minutes</p>
+<p><strong>Key takeaway:</strong> Flexbox makes horizontal alignment easy. The input grows (<code v-pre>flex: 1</code>), button stays fixed, and everything aligns with <code v-pre>align-items</code>.</p>
+<doc-anchor-target id="colors-and-typography">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#colors-and-typography">#</doc-anchor-trigger>
+        <span>Colors and Typography</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="colors">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#colors">#</doc-anchor-trigger>
+        <span>Colors</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Named colors */
+color: red;
+
+/* Hexadecimal */
+color: #ff0000;
+color: #f00; /* shorthand */
+
+/* RGB */
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5); /* with transparency */
+
+/* HSL (Hue, Saturation, Lightness) */
+color: hsl(0, 100%, 50%);
+color: hsla(0, 100%, 50%, 0.5); /* with transparency */</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="typography">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#typography">#</doc-anchor-trigger>
+        <span>Typography</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  text-align: left;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Font properties:</strong></p>
+<ul>
+<li><code v-pre>font-family</code> - Font stack (always provide fallbacks)</li>
+<li><code v-pre>font-size</code> - Text size (use rem for accessibility)</li>
+<li><code v-pre>font-weight</code> - Boldness (400 normal, 700 bold)</li>
+<li><code v-pre>line-height</code> - Space between lines (unitless or em)</li>
+<li><code v-pre>text-align</code> - Horizontal alignment</li>
+<li><code v-pre>text-decoration</code> - Underline, line-through, etc.</li>
+<li><code v-pre>text-transform</code> - Uppercase, lowercase, capitalize</li>
+<li><code v-pre>letter-spacing</code> - Space between letters</li>
+</ul>
+<doc-anchor-target id="layout-with-flexbox">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#layout-with-flexbox">#</doc-anchor-trigger>
+        <span>Layout with Flexbox</span>
+    </h2>
+</doc-anchor-target>
+<p>Flexbox is a one-dimensional layout method for laying out items in rows or columns.</p>
+<doc-anchor-target id="flex-container">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flex-container">#</doc-anchor-trigger>
+        <span>Flex Container</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.container {
+  display: flex;
+  flex-direction: row; /* row | row-reverse | column | column-reverse */
+  justify-content: center; /* flex-start | flex-end | center | space-between | space-around | space-evenly */
+  align-items: center; /* flex-start | flex-end | center | stretch | baseline */
+  flex-wrap: wrap; /* nowrap | wrap | wrap-reverse */
+  gap: 20px; /* Space between items */
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="flex-items">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flex-items">#</doc-anchor-trigger>
+        <span>Flex Items</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.item {
+  flex-grow: 1; /* Grow to fill space */
+  flex-shrink: 0; /* Don't shrink below flex-basis */
+  flex-basis: 200px; /* Initial size */
+  /* Shorthand: flex: 1 0 200px; */
+  align-self: flex-start; /* Override container align-items */
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-responsive-design-with-flexbox">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-responsive-design-with-flexbox">#</doc-anchor-trigger>
+        <span>Exercise: Responsive Design with Flexbox</span>
+    </h3>
+</doc-anchor-target>
+<p>Add a media query to make your task list responsive. This shows how Flexbox adapts to different screen sizes:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Mobile: Stack input and button vertically */
+@media (max-width: 480px) {
+  .input-row {
+    flex-direction: column; /* Stack vertically instead of side-by-side */
+  }
+  
+  .input-row input,
+  .input-row button {
+    width: 100%; /* Full width on mobile */
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>What changed:</strong></p>
+<ul>
+<li><strong>Desktop (<code v-pre>flex-direction: row</code>):</strong> <code v-pre>[Input field    ] [Button]</code></li>
+<li><p><strong>Mobile (<code v-pre>flex-direction: column</code>):</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">[Input field          ]
+[Button               ]</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<p><strong>Try this:</strong> Resize your browser window and watch the layout change at 480px.</p>
+<p><strong>Time:</strong> ~10 minutes</p>
+<doc-anchor-target id="layout-with-css-grid">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#layout-with-css-grid">#</doc-anchor-trigger>
+        <span>Layout with CSS Grid</span>
+    </h2>
+</doc-anchor-target>
+<p>CSS Grid is a two-dimensional layout system for rows and columns together.</p>
+<doc-anchor-target id="grid-container">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#grid-container">#</doc-anchor-trigger>
+        <span>Grid Container</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-columns: 200px 1fr 200px; /* fixed-fluid-fixed */
+  grid-template-rows: auto 1fr auto; /* header-content-footer */
+  gap: 20px;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="grid-items">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#grid-items">#</doc-anchor-trigger>
+        <span>Grid Items</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.header {
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+.sidebar {
+  grid-row: 2 / 4; /* Span rows 2 to 4 */
+}
+
+/* Named grid areas */
+.layout {
+  display: grid;
+  grid-template-areas:
+    &quot;header header header&quot;
+    &quot;sidebar main main&quot;
+    &quot;footer footer footer&quot;;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-css-grid-layout-optional">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-css-grid-layout-optional">#</doc-anchor-trigger>
+        <span>Exercise: CSS Grid Layout (Optional)</span>
+    </h3>
+</doc-anchor-target>
+<p>Grid is great for two-dimensional layouts. Compare it to Flexbox:</p>
+<p><strong>Flexbox (one-dimensional):</strong> Good for rows OR columns
+<strong>Grid (two-dimensional):</strong> Good for rows AND columns together</p>
+<doc-anchor-target id="grid-example-task-dashboard-layout">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#grid-example-task-dashboard-layout">#</doc-anchor-trigger>
+        <span>Grid Example: Task Dashboard Layout</span>
+    </h4>
+</doc-anchor-target>
+<p>Imagine expanding your task list into a dashboard:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Sidebar + Main content */
+  grid-template-rows: auto 1fr auto; /* Header + Content + Footer */
+  gap: 20px;
+  min-height: 100vh;
+}
+
+.sidebar {
+  grid-row: 1 / 4; /* Sidebar spans all 3 rows */
+  background: #f5f5f5;
+}
+
+.header {
+  grid-column: 2; /* Header in second column */
+}
+
+.main {
+  grid-column: 2; /* Main content in second column */
+}
+
+.footer {
+  grid-column: 2; /* Footer in second column */
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Visual result:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">┌──────────┬──────────────────┐
+│          │     Header       │
+│          ├──────────────────┤
+│ Sidebar  │                  │
+│ (lists,  │      Main        │
+│ filters) │    (your tasks)  │
+│          │                  │
+│          ├──────────────────┤
+│          │     Footer       │
+└──────────┴──────────────────┘</code></pre>
+</doc-codeblock></div>
+<p><strong>Key differences from Flexbox:</strong></p>
+<ul>
+<li>Grid defines both rows AND columns at once</li>
+<li>Items can span multiple rows/columns (<code v-pre>grid-row: 1 / 4</code>)</li>
+<li>Easier for complex page layouts</li>
+<li>Flexbox is better for single rows (like your input + button)</li>
+</ul>
+<p><strong>For your task list:</strong></p>
+<ul>
+<li>Keep using <strong>Flexbox</strong> for the input row and individual task items</li>
+<li>Use <strong>Grid</strong> if you later add a sidebar with filters/categories</li>
+</ul>
+<p><strong>Experiment:</strong> Try creating a 3-column grid for task categories:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.task-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~10 minutes (optional)</p>
+<doc-anchor-target id="positioning">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#positioning">#</doc-anchor-trigger>
+        <span>Positioning</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Static (default) */
+position: static;
+
+/* Relative - positioned relative to its normal position */
+position: relative;
+top: 10px;
+left: 20px;
+
+/* Absolute - positioned relative to nearest positioned ancestor */
+position: absolute;
+top: 0;
+right: 0;
+
+/* Fixed - positioned relative to viewport */
+position: fixed;
+bottom: 20px;
+right: 20px;
+
+/* Sticky - toggles between relative and fixed */
+position: sticky;
+top: 0;</code></pre>
+</doc-codeblock></div>
+<p><strong>Z-index for stacking:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.modal {
+  position: fixed;
+  z-index: 1000; /* Higher values appear on top */
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="questions---positioning">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#questions---positioning">#</doc-anchor-trigger>
+        <span>Questions - Positioning</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>What is the difference between <code v-pre>relative</code> and <code v-pre>absolute</code> positioning?</li>
+<li>When would you use <code v-pre>sticky</code> positioning?</li>
+<li>What creates a new stacking context?</li>
+</ol>
+<doc-anchor-target id="responsive-design">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#responsive-design">#</doc-anchor-trigger>
+        <span>Responsive Design</span>
+    </h2>
+</doc-anchor-target>
+<p>Responsive design ensures your website looks good on all devices.</p>
+<doc-anchor-target id="media-queries">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#media-queries">#</doc-anchor-trigger>
+        <span>Media Queries</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Mobile first approach */
+.container {
+  padding: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="common-breakpoints">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-breakpoints">#</doc-anchor-trigger>
+        <span>Common Breakpoints</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Mobile: &lt; 768px</li>
+<li>Tablet: 768px - 1023px</li>
+<li>Desktop: 1024px+</li>
+</ul>
+<doc-anchor-target id="responsive-images">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#responsive-images">#</doc-anchor-trigger>
+        <span>Responsive Images</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-css-variables">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-css-variables">#</doc-anchor-trigger>
+        <span>Exercise: CSS Variables</span>
+    </h3>
+</doc-anchor-target>
+<p>Replace your hardcoded colors with CSS variables:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">:root {
+  --primary: #4a90e2;
+  --text: #333;
+  --completed: #888;
+}
+
+/* Use them in your styles */
+button { background: var(--primary); }
+.completed { color: var(--completed); }</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~5 minutes</p>
+<doc-anchor-target id="css-variables-custom-properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#css-variables-custom-properties">#</doc-anchor-trigger>
+        <span>CSS Variables (Custom Properties)</span>
+    </h2>
+</doc-anchor-target>
+<p>CSS variables enable reusable values and theming.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --font-size-base: 16px;
+  --spacing-unit: 1rem;
+}
+
+body {
+  font-size: var(--font-size-base);
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Scope and inheritance:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.card {
+  --card-padding: 20px;
+  padding: var(--card-padding);
+}
+
+.card-large {
+  --card-padding: 40px; /* Overrides for this element and children */
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="transitions-and-animations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#transitions-and-animations">#</doc-anchor-trigger>
+        <span>Transitions and Animations</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="transitions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#transitions">#</doc-anchor-trigger>
+        <span>Transitions</span>
+    </h3>
+</doc-anchor-target>
+<p>Smooth property changes:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darkblue;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Transition properties:</strong></p>
+<ul>
+<li><code v-pre>transition-property</code> - Which property to animate</li>
+<li><code v-pre>transition-duration</code> - How long the animation takes</li>
+<li><code v-pre>transition-timing-function</code> - Speed curve (ease, linear, ease-in, ease-out)</li>
+<li><code v-pre>transition-delay</code> - Delay before starting</li>
+</ul>
+<doc-anchor-target id="animations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#animations">#</doc-anchor-trigger>
+        <span>Animations</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.modal {
+  animation: slideIn 0.3s ease-out;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="exercise-simple-transition-optional">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exercise-simple-transition-optional">#</doc-anchor-trigger>
+        <span>Exercise: Simple Transition (Optional)</span>
+    </h3>
+</doc-anchor-target>
+<p>Add a hover transition to your button:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">button {
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: darkblue;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Time:</strong> ~5 minutes (optional)</p>
+<doc-anchor-target id="modern-css-features">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modern-css-features">#</doc-anchor-trigger>
+        <span>Modern CSS Features</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="container-queries">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#container-queries">#</doc-anchor-trigger>
+        <span>Container Queries</span>
+    </h3>
+</doc-anchor-target>
+<p>Style based on container size, not viewport:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="css-nesting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#css-nesting">#</doc-anchor-trigger>
+        <span>CSS Nesting</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">.card {
+  padding: 1rem;
+  
+  &amp;:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="logical-properties">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logical-properties">#</doc-anchor-trigger>
+        <span>Logical Properties</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Instead of left/right, use inline-start/end */
+margin-inline-start: 1rem;
+
+/* Instead of top/bottom, use block-start/end */
+padding-block: 1rem;
+
+/* Border radius that works with text direction */
+border-start-start-radius: 8px;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="best-practices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practices">#</doc-anchor-trigger>
+        <span>Best Practices</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Mobile first</strong>: Write base styles for mobile, enhance for larger screens</li>
+<li><strong>Use relative units</strong>: rem for fonts, % or fr for layouts</li>
+<li><strong>Limit specificity</strong>: Avoid deep nesting and ID selectors</li>
+<li><strong>Organize with methodology</strong>: BEM, SMACSS, or Atomic CSS</li>
+<li><strong>Comment complex sections</strong>: Explain why, not what</li>
+<li><strong>Test in real browsers</strong>: Don&#x27;t rely solely on DevTools</li>
+</ul>
+<doc-anchor-target id="bem-naming-convention">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bem-naming-convention">#</doc-anchor-trigger>
+        <span>BEM Naming Convention</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-css"><code v-pre class="language-css">/* Block */
+.card { }
+
+/* Element */
+.card__title { }
+.card__image { }
+
+/* Modifier */
+.card--featured { }
+.card__title--large { }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="tools--resources">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tools--resources">#</doc-anchor-trigger>
+        <span>Tools &amp; Resources</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><a href="https://css-tricks.com/">CSS-Tricks</a> - Comprehensive guides and almanac</li>
+<li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a> - Learn Flexbox interactively</li>
+<li><a href="https://cssgridgarden.com/">Grid Garden</a> - Learn Grid interactively</li>
+<li><a href="https://caniuse.com/">Can I Use</a> - Check browser support</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Reference</a></li>
+<li><a href="https://developer.chrome.com/docs/devtools/css/">Chrome DevTools</a> - Debug CSS</li>
+</ul>
+<doc-anchor-target id="worth-knowing-advanced">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#worth-knowing-advanced">#</doc-anchor-trigger>
+        <span>Worth Knowing (Advanced)</span>
+    </h2>
+</doc-anchor-target>
+<p>These concepts are worth mentioning but don&#x27;t learn them now:</p>
+<ul>
+<li>CSS Architecture methodologies (BEM, SMACSS, ITCSS)</li>
+<li>CSS Preprocessors (Sass, Less, Stylus)</li>
+<li>PostCSS and CSS custom processing</li>
+<li>CSS-in-JS solutions</li>
+<li>Web Fonts optimization (font-display, subsetting)</li>
+<li>CSS Houdini (paint API, layout API)</li>
+<li>View Transitions API</li>
+<li>Cascade Layers (@layer)</li>
+</ul>
+<doc-anchor-target id="next-steps">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#next-steps">#</doc-anchor-trigger>
+        <span>Next steps</span>
+    </h2>
+</doc-anchor-target>
+<p>You&#x27;ve styled your task list with:</p>
+<ul>
+<li><span class="docs-emoji">&#x2705;</span> <strong>Flexbox</strong> for layout (input row, task alignment)</li>
+<li><span class="docs-emoji">&#x2705;</span> <strong>Media queries</strong> for responsive design</li>
+<li><span class="docs-emoji">&#x2705;</span> Basic visual polish</li>
+</ul>
+<p><strong>Flexbox vs Grid - When to use:</strong></p>
+<ul>
+<li><strong>Flexbox</strong>: Single rows or columns (navigation bars, form rows, centering items)</li>
+<li><strong>Grid</strong>: Complex two-dimensional layouts (page layouts, dashboards, card grids)</li>
+</ul>
+<p>Now let&#x27;s add interactivity with <a href="frontend/javascript-vanilla">JavaScript Vanilla</a>!</p>
+<p>You&#x27;ll learn to:</p>
+<ul>
+<li>Add tasks dynamically</li>
+<li>Handle user interactions (clicks, keyboard)</li>
+<li>Store data in the browser</li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../frontend/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Frontend Development</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../frontend/javascript-vanilla/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Frontend Java​Script</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "CSS - Cascading Style Sheets", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
