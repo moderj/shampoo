@@ -29,7 +29,7 @@ Before you start make sure you familiar with these concepts:
 
 ### General Guidelines
 
-- The database should be a [non relational](https://www.mongodb.com/databases/non-relational) database.
+- The database should be a [non relational](https://www.mongodb.com/databases/non-relational) (MongoDB) OR [relational](https://www.postgresql.org/) (PostgreSQL) database.
 - The API server should be a [RESTfull](https://www.redhat.com/en/topics/api/what-is-a-rest-api) API server.
 - You should test the project, and the coverage of the tests should be high as possible.
 - You should PR Each task in the project.
@@ -44,10 +44,18 @@ Here is my recommended technologies:
 - Language: [JavaScript](https://www.javascript.com/) or [TypeScript](https://www.typescript.org/)
 - Server: [fastify](https://www.fastify.io/) or [express](https://expressjs.com/) 5.x [API](https://expressjs.com/en/5x/api.html)
 - Test: [Vitest](https://vitest.dev/) or [Node Test Runner](https://nodejs.org/api/test.html) or [Jest](https://jestjs.io/)
-- Database: [MongoDB](https://www.mongodb.com/)
+- Database: [MongoDB](https://www.mongodb.com/) OR [PostgreSQL](https://www.postgresql.org/)
 
+  If choosing MongoDB:
   Don't use [Mongoose](https://mongoosejs.com/) ODM, use [MongoDB Node Driver](https://www.mongodb.com/docs/drivers/node/).
   You can read more about it in the [mongoose-vs-nodejs-driver](https://www.mongodb.com/developer/languages/javascript/mongoose-versus-nodejs-driver/) article.
+
+  If choosing PostgreSQL:
+  Use [Drizzle ORM](https://orm.drizzle.team/) - a type-safe ORM for PostgreSQL.
+  - Install: `npm install drizzle-orm pg`
+  - Install dev dependencies: `npm install -D drizzle-kit`
+  - Supports PostGIS via [drizzle-orm/postgis](https://orm.drizzle.team/docs/column-types/pg#postgis)
+  - Provides type-safe queries, migrations, and schema management
 
 - Logger: [fastify built-in pino logger](https://www.fastify.io/docs/latest/Reference/Logging/) or [pino](https://www.npmjs.com/package/pino) or [winston](https://www.npmjs.com/package/winston).
 - Schema validator: [fastify built-in ajv validator](https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/) or [Ajv](https://ajv.js.org/) or [Joi](https://joi.dev/). If you using Typescript have a look at [Runtime checks with TypeScript](Node/TypeScript#runtime-checks-with-typescript) section.
@@ -102,6 +110,71 @@ interface Duty {
   createdAt: ISODate;
   updatedAt: ISODate;
 }
+```
+
+### PostgreSQL Schema (Drizzle ORM)
+
+If using PostgreSQL with Drizzle ORM, define your schema in TypeScript. Drizzle will generate the SQL migrations and provide type-safe queries.
+
+**Prerequisite**: Enable PostGIS extension in your PostgreSQL database:
+```sql
+CREATE EXTENSION IF NOT EXISTS postgis;
+```
+
+```typescript
+import { 
+  pgTable, char, varchar, text, smallint, integer, 
+  timestamp, jsonb, primaryKey, sql 
+} from 'drizzle-orm/pg-core';
+
+// Soldiers table
+export const soldiers = pgTable('soldiers', {
+  id: char('id', { length: 7 }).primaryKey(),
+  name: varchar('name', { length: 50 }).notNull(),
+  rankValue: smallint('rank_value').notNull(),
+  rankName: varchar('rank_name', { length: 20 }).notNull(),
+  limitations: text('limitations').array(),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow(),
+});
+
+// Duties table with PostGIS geometry
+export const duties = pgTable('duties', {
+  id: integer('id').primaryKey().generatedAlwaysAsIdentity(),
+  name: varchar('name', { length: 50 }).notNull(),
+  description: text('description'),
+  location: sql`geometry(Point, 4326)`, // PostGIS geometry - requires postgis extension
+  startTime: timestamp('start_time', { withTimezone: true }).notNull(),
+  endTime: timestamp('end_time', { withTimezone: true }).notNull(),
+  minRank: smallint('min_rank'),
+  maxRank: smallint('max_rank'),
+  constraints: text('constraints').array(),
+  soldiersRequired: smallint('soldiers_required').default(1),
+  value: integer('value').notNull(),
+  status: varchar('status', { length: 20 }).default('unscheduled'),
+  statusHistory: jsonb('status_history').default(sql`'[]'::jsonb`),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow(),
+});
+
+// Junction table for many-to-many relationship
+export const dutySoldiers = pgTable('duty_soldiers', {
+  dutyId: integer('duty_id').notNull().references(() => duties.id, { onDelete: 'cascade' }),
+  soldierId: char('soldier_id', { length: 7 }).notNull().references(() => soldiers.id, { onDelete: 'cascade' }),
+  assignedAt: timestamp('assigned_at', { withTimezone: true }).defaultNow(),
+}, (table) => ({
+  pk: primaryKey({ columns: [table.dutyId, table.soldierId] }),
+}));
+```
+
+#### Drizzle Kit Configuration
+
+Create `drizzle.config.ts` for migrations:
+
+Run migrations:
+```bash
+npx drizzle-kit generate  # Generate migration files
+npx drizzle-kit migrate   # Run migrations
 ```
 
 ## Task 1 - Health Check
@@ -278,13 +351,15 @@ If you using fastify (and you should) Add schema also for the response (Why?).
    - Generate a unique \_id for the object (MongoDB will do it for you).
    - Validate:
      - `name` is a string with length between 3 and 50.
-     - `location` is a valid GeoJSON Point.
-     - `startTime` is before the `endTime` and that the `startTime` is in the future.
-     - `value` is a positive number.
-     - `minRank` and `maxRank` if exists are numbers between 0 and 6.
-     - All the above parameters exist, `minRank` and `maxRank` are optional. Any other property is invalid.
-   - When a duty is inserted to the database:
-     - Add the `soldiers` property and initialize it to an empty array.
+      - `location` is a valid GeoJSON Point.
+        - **PostgreSQL (Drizzle)**: Store location using `sql\`ST_SetSRID(ST_MakePoint(\${lon}, \${lat}), 4326)\``.
+      - `startTime` is before the `endTime` and that the `startTime` is in the future.
+      - `value` is a positive number.
+      - `minRank` and `maxRank` if exists are numbers between 0 and 6.
+      - All the above parameters exist, `minRank` and `maxRank` are optional. Any other property is invalid.
+    - When a duty is inserted to the database:
+      - Add the `soldiers` property and initialize it to an empty array.
+        - **PostgreSQL (Drizzle)**: This logic relates to the `dutySoldiers` junction table. Initially, no records are added there.
      - Add the `status` property and initialize it to `unscheduled`.
      - Add the `statusHistory` property and initialize it to an array with the current status and date.
    - Return the inserted `Duty`.
@@ -340,7 +415,8 @@ For example:
 1. Create endpoint for getting the Justice Board:
 
    - GET `/justice-board`
-   - Use mongoDB aggregation to calculate the Justice Board (Why?).
+   - Use mongoDB aggregation OR Drizzle ORM aggregation to calculate the Justice Board (Why?).
+     - **PostgreSQL (Drizzle)**: Use `db.select()` with `leftJoin()` and `sql\`SUM(\${duties.value})\` to calculate scores.
 
 1. Optional: Create endpoint for getting a soldier's score:
 
@@ -485,7 +561,9 @@ The auto scheduling mechanism should schedule all unscheduled duties.
 
    For example:
 
-   - A request to `/duties?near=32.0853,34.7818&radius=1000` should return the duties that are near Tel Aviv (32.0853, 34.7818) with a max distance of 1000 meters.
+    - A request to `/duties?near=32.0853,34.7818&radius=1000` should return the duties that are near Tel Aviv (32.0853, 34.7818) with a max distance of 1000 meters.
+      - **MongoDB**: Use `$near` operator.
+      - **PostgreSQL (Drizzle)**: Use `sql\`ST_DWithin(location::geography, ST_SetSRID(ST_MakePoint(\${lon}, \${lat}), 4326)::geography, \${radius})\``.
 
 ## Task 8 - Make it scalable (Advanced)
 
@@ -494,6 +572,8 @@ The auto scheduling mechanism should schedule all unscheduled duties.
    You may use this concepts:
 
    - Indexing
+     - **MongoDB**: `createIndex`.
+     - **PostgreSQL (Drizzle)**: Define indexes in your `pgTable()` configuration using the `index()` function. Use **GIN** for Array/JSONB columns and **GiST** for Geometry columns.
    - Pagination
    - Cache
    - Job Queue
