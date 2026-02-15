@@ -825,6 +825,71 @@ border-start-start-radius: 8px;
 - [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/css/) - Debug CSS
 
+## SVG and CSS
+
+SVG (Scalable Vector Graphics) is technically part of HTML markup, but we're covering it here because you needed to understand CSS fundamentals first. SVGs are incredibly powerful for creating resolution-independent graphics, icons, and animations.
+
+### Why SVG Matters
+
+SVGs are vector-based, meaning they:
+- Scale to any size without losing quality
+- Are resolution-independent (perfect for retina displays)
+- Can be styled with CSS
+- Can be animated with CSS or JavaScript
+- Are searchable and accessible
+- Have small file sizes for simple graphics
+
+### Learn SVG Basics
+
+Read this excellent introduction to understand how SVGs work:
+
+- [A Friendly Introduction to SVG](https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/) (~20 minutes)
+
+### Questions - SVG Concepts
+
+After reading the article, think about these questions:
+
+1. What is the difference between raster images (PNG, JPG) and vector graphics (SVG)? When would you choose one over the other?
+2. How is the SVG coordinate system different from HTML positioning? What is the `viewBox` attribute and why is it important?
+3. SVG elements can be styled with CSS properties. Which CSS properties work on SVG elements vs HTML elements? Are there differences?
+4. How would you embed an SVG in your HTML? What are the trade-offs between inline SVG vs using an `<img>` tag?
+5. Can you use CSS transforms (rotate, scale, translate) on SVG elements? How might this be useful for animations?
+
+### Optional Exercise: Add SVG Icons to Your Task List
+
+Enhance your task list project by replacing text buttons with SVG icons:
+
+**Ideas to implement:**
+
+1. **Delete button icon**: Replace "Delete" text with a trash can or X icon
+2. **Add button icon**: Replace "Add" text with a plus (+) icon
+3. **Custom checkbox**: Style the checkbox using SVG instead of the default browser styling
+4. **Status indicators**: Add colored SVG dots or badges to show task priority
+5. **Loading spinner**: Create an animated SVG spinner for async operations
+
+**Challenge yourself:**
+
+- Create the SVG icons from scratch (circles, paths, rectangles)
+- Style them with CSS (change color on hover, add transitions)
+- Make them responsive (scale with viewport size)
+- Try CSS animations (rotate, fade, bounce)
+
+**Hint:** Start simple with basic shapes:
+
+```html
+<!-- Simple trash icon example -->
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <rect x="5" y="6" width="14" height="16" stroke="currentColor" stroke-width="2"/>
+  <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+  <line x1="10" y1="10" x2="10" y2="18" stroke="currentColor" stroke-width="2"/>
+  <line x1="14" y1="10" x2="14" y2="18" stroke="currentColor" stroke-width="2"/>
+</svg>
+```
+
+**Time:** ~30-60 minutes (optional)
+
+**Why this matters:** Most modern web apps use SVG icons (Font Awesome, Heroicons, Lucide). Understanding how they work gives you the foundation to customize and create your own.
+
 ## Worth Knowing (Advanced)
 
 These concepts are worth mentioning but don't learn them now:
@@ -837,6 +902,9 @@ These concepts are worth mentioning but don't learn them now:
 - CSS Houdini (paint API, layout API)
 - View Transitions API
 - Cascade Layers (@layer)
+- SVG animation libraries (GSAP, Anime.js)
+- SVG path drawing animations
+- SVG filters and effects
 
 ## Next steps
 
